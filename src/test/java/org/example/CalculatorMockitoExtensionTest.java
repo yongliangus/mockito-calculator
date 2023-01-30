@@ -57,8 +57,8 @@ public class CalculatorMockitoExtensionTest {
     privateMethod.setAccessible(true);
 
     // Invoke the private method
-    int total = (int) privateMethod.invoke(c, 5, 2);
+    int result = (int) privateMethod.invoke(c, 5, 2);
 
-    assertEquals(3, total);
+    assertEquals(3, result);
   }
 }

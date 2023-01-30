@@ -16,7 +16,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 // Automatically creates mock objects for any class attribute
 // or method parameter annotated with @Mock.
 @ExtendWith(MockitoExtension.class)
-public class CalculatorTestMockitoExtension {
+public class CalculatorMockitoExtensionTest {
 
   @InjectMocks
   Calculator c;

@@ -15,3 +15,26 @@ mock CalculatorService directly with "when" ... and "return" ...
 "@ExtendWith" class decorator to automatically creates mock objects for any class
 attribute or method parameter annotated with @Mock. Moreover, you aren't required to
 set up MockitoAnnotations.openMocks(this) in #2.
+
+# Unit testing of private method
+
+Java private method can not be mocked with mockito. However, you can use java reflection
+to make the private method accessible and then unit test it.
+```
+// Calculator has a private method
+public class Calculator {
+  private int performMinus(int i, int j) { return i - j; }
+}
+
+@InjectMocks
+Calculator c;
+
+// Find the private method with java reflection
+Method privateMethod = Calculator.class.getDeclaredMethod("performMinus", int.class, int.class);
+
+// Change the method to be accessible
+privateMethod.setAccessible(true);
+
+// Invoke the private method
+int result = (int) privateMethod.invoke(c, 5, 2);
+```

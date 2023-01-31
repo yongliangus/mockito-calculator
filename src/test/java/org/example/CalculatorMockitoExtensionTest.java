@@ -27,10 +27,6 @@ public class CalculatorMockitoExtensionTest {
   @Mock
   CalculatorService service;
 
-  // Simply put, the API is Mockito.spy() to spy on a real object.
-  @Spy
-  Calculator d = new Calculator(service);
-
 //  @BeforeEach
 //  void setUp() {
 //  }

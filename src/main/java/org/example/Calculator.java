@@ -12,4 +12,5 @@ public class Calculator {
     return service.add(i, j);
   }
   private int performMinus(int i, int j) { return i - j; }
+  public String getName() { return "Calculator"; }
 }

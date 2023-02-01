@@ -13,12 +13,17 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.Spy;
 import org.mockito.junit.jupiter.MockitoExtension;
+import org.mockito.junit.jupiter.MockitoSettings;
+import org.mockito.quality.Strictness;
 
 // Reference - https://www.vogella.com/tutorials/Mockito/article.html#using-mockito-for-mocking-objects-in-unit-tests
 
 // Automatically creates mock objects for any class attribute
 // or method parameter annotated with @Mock.
 @ExtendWith(MockitoExtension.class)
+// Below decorator is useless as Strictness.WARN is the default
+@MockitoSettings(strictness = Strictness.WARN)
+@DisplayName("Calculator Mockito Extension Test")
 public class CalculatorMockitoExtensionTest {
 
   @InjectMocks
